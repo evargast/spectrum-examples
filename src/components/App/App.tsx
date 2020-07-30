@@ -1,15 +1,29 @@
-import { Button, defaultTheme, Provider } from "@adobe/react-spectrum";
+import {
+    ActionButton,
+    Button,
+    Item,
+    Menu,
+    MenuTrigger,
+    Provider,
+} from "@adobe/react-spectrum";
 import * as React from "react";
 import { FC } from "react";
 
-interface HelloWorldProps {
-    text: string;
-}
+import LightestTheme from "../../styles/LightestTheme";
 
-const App: FC<HelloWorldProps> = props => (
-    <Provider theme={defaultTheme}>
-        <h1>{props.text}</h1>
-        <Button variant="cta">Save</Button>
+const App: FC = () => (
+    <Provider theme={LightestTheme} colorScheme={"light"}>
+        <MenuTrigger>
+            <ActionButton>Edit</ActionButton>
+            <Menu>
+                <Item>Cut</Item>
+                <Item>Copy</Item>
+                <Item>Paste</Item>
+            </Menu>
+        </MenuTrigger>
+        <div>
+            <Button variant="cta"> Hello</Button>
+        </div>
     </Provider>
 );
 
