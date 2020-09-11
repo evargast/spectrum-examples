@@ -1,6 +1,6 @@
 import {
     ActionButton,
-    Button,
+    defaultTheme,
     Item,
     Menu,
     MenuTrigger,
@@ -9,21 +9,16 @@ import {
 import * as React from "react";
 import { FC } from "react";
 
-import LightestTheme from "../../styles/LightestTheme";
-
 const App: FC = () => (
-    <Provider theme={LightestTheme} colorScheme={"light"}>
+    <Provider theme={defaultTheme} colorScheme={"light"}>
         <MenuTrigger>
-            <ActionButton>Edit</ActionButton>
+            <ActionButton>Show menu</ActionButton>
             <Menu>
                 <Item>Cut</Item>
                 <Item>Copy</Item>
                 <Item>Paste</Item>
             </Menu>
         </MenuTrigger>
-        <div>
-            <Button variant="cta"> Hello</Button>
-        </div>
     </Provider>
 );
 
