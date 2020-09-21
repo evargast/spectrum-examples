@@ -25,6 +25,10 @@ addParameters({
     },
 });
 
-// addDecorator(storyFn => {
-//     return <Provider theme={defaultTheme}>{storyFn()}</Provider>;
-// });
+addDecorator(storyFn => {
+    return (
+        <Provider theme={defaultTheme} colorScheme={"light"}>
+            {storyFn()}
+        </Provider>
+    );
+});
